@@ -20,7 +20,7 @@ app.get('/',function(req, res){
 });
 
 app.get('/about',function(req, res){
-    res.send('About US!');
+    res.send('About US');
 });
 
 app.use(express.static(__dirname+'/public')); //Sets up static web serve, Takes the folder you want to expose
