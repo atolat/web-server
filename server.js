@@ -1,17 +1,18 @@
-var PORT = 3000;
+var PORT =process.env.PORT || 3000;
 var express = require('express');
 var app = express();
 
-var middleware = {
-    requireAuthentication: function(req,res, next){
-        console.log('Private Route Hit!');
-        next();
-    },
-    logger: function(req,res,next){
-        console.log('Request:' +new Date().toString() +' '+req.method+' '+req.originalUrl );
-        next();
-    }
-}
+var middleware = require('./middleware.js'),
+//    {
+//    requireAuthentication: function(req,res, next){
+//        console.log('Private Route Hit!');
+//        next();
+//    },
+//    logger: function(req,res,next){
+//        console.log('Request:' +new Date().toString() +' '+req.method+' '+req.originalUrl );
+//        next();
+//    }
+//}
 
 app.use(middleware.logger);
 
